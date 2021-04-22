@@ -1,0 +1,507 @@
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+
+
+/* Sidenav */
+/* Sidenav */
+/* Sidenav */
+
+.sidenav {
+    height: 100%; 
+    width: 220px; 
+    position: fixed; 
+    z-index: 1; /* Biar gak ketimpa */
+    top: 0;
+    left: 0;
+    background-color: #fcfcfc; 
+    overflow-x: hidden; 
+    border-right:1px solid #e9e9e9; /*Pembatas*/
+}
+
+.logo {
+    padding-bottom: 20px;
+    width: 100%;
+}
+
+.sidenav-container {
+    margin: 10px;
+}
+
+.sidenav-link {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 100px;
+}
+
+.sidenav-button {
+    width: 100%;
+    height: 45px;
+    background-color: #6777ef;
+    font-weight: bold;
+    border-radius: 15px;
+    border-color: #fcfcfc;
+    display: flex;
+}
+
+.sidenav-button-no {
+    width: 100%;
+    height: 45px;
+    background-color: #fcfcfc;
+    border-color: #fcfcfc;
+    color: #a5aab6;
+    font-weight: bold;
+    border-radius: 15px;
+    display: flex;
+}
+
+.sidenav-icon {
+   padding-right: 10px;
+}
+
+.sidenav-text {
+    font-size 1px;
+}
+
+a.sidenav-button {
+    text-align: left;
+    align-items: center;
+}
+
+a.sidenav-button-no {
+    text-align: left;
+    align-items: center;
+}
+
+a.btn-primary:hover{
+    background-color:inherit;
+    border-color: inherit;
+    color: #a5aab6;
+}
+
+/* Konten Utama */
+/* Konten Utama */
+/* Konten Utama */
+/* Konten Utama */
+
+.wrapper {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+}
+
+.left-dummy {
+    background-color: blue;
+    height: 100vh;
+}
+
+.right-content {
+    display: grid;
+    grid-template-rows: 100px 1fr 50px;
+}
+
+/* Header property*/
+.right-content-header {
+    background-color: #6777ef;
+    color: black;
+    text-align: center;
+    border-bottom:1px solid wheat; /*Pembatas*/
+
+}
+
+.right-content-header-profile {
+    margin-top: 20px;
+    color: white;
+    display: flex;
+    grid-template-columns: 1fr 1fr;
+}
+
+.right-content-header-profile-left {
+    padding-left: 45px;
+}
+
+.right-content-header-profile-right {
+    display: flex;
+    margin-left: auto;
+    padding-right: 45px;
+}
+
+.right-content-header-profile-icon {
+    height: 100%;
+    font-size: 40px;
+    margin-right: 10px;
+}    
+
+.right-content-header-toggle-icon {
+    position: relative;
+    color: white;
+    font-size: 40px;
+}
+
+.right-content-header-profile-text {
+    position: relative;
+    top: 5px;
+    font-weight: bolder;
+}
+
+.right-content-header-profile-icon-dropdown {
+    margin-top: 7px;
+    margin-left: 5px;
+}
+
+/* Main property*/
+
+.right-content-main {
+    display: grid;
+    grid-template-rows: 95px 130px 1fr 1fr;
+    grid-gap: 0px;
+    margin-bottom: 200px;
+    background-color: #f4f6f9;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.right-content-main-heading {
+    padding: 10px;
+}
+
+.right-content-main-heading-container {
+    background-color: white;
+    height: 100%;
+    border-radius: 5px;
+    padding: 16px;
+    padding-left: 20px;
+    position: relative;
+    top: -30px;
+}
+
+.right-content-main-heading-text {
+    font-weight:600;
+    color: #242424;
+    font-size: x-large;
+}
+
+.right-content-main-stat {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 15px;
+    position: relative;
+    top: -30px;
+}
+
+.right-content-main-stat-container {
+    padding: 10px;
+}
+
+.right-content-main-stat-wrapper {
+    background-color: white;
+    height: 100%;
+    border-radius: 5px;
+    display: grid;
+    grid-template-columns: 4fr 5fr;
+    padding: 10px;
+}
+
+.right-content-main-stat-1-icon-container {
+    background-color: #6777ef;
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 10px;
+}
+
+.right-content-main-stat-1-icon {
+    font-size: 40px;
+}
+
+.right-content-main-stat-2-icon {
+    font-size: 45px;
+}
+
+.right-content-main-stat-text {
+    margin-top: 10px;
+    margin-left: 10px;
+    font-weight: bold;
+}
+
+
+.right-content-main-stat-text-title {
+    margin-bottom: 0px;   
+    color: #67676b;
+}
+
+.right-content-main-stat-text-subtitle {
+    font-size: large;
+}
+
+.right-content-main-stat-2-icon-container {
+    background-color: #58BC82;
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 10px;
+}
+
+.right-content-main-stat-3-icon-container {
+    background-color: #FF9F1C;
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 10px;
+}
+
+.right-content-main-stat-4-icon-container {
+    background-color: #DA2C38;
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 10px;
+}
+
+
+.right-content-main-graph {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.right-content-main-graph-container {
+    position: relative;
+    padding: 10px;
+    top: -20px;
+}
+
+.chartstyle {
+    background-color: white;
+    max-width: 100%;
+    border-radius: 10px;
+    padding: 15px;
+}
+
+
+.right-content-main-history {
+
+    
+}
+
+.right-content-footer {
+    background-color: white;
+    color: black;
+    text-align: center;
+    border-top:1px solid wheat; /*Pembatas*/
+ 
+}
+
+
+/* Kode Dibawah untuk page Barang */
+
+.right-content-main2 {
+    display: grid;
+    grid-template-rows: 95px 1fr;
+    grid-gap: 0px;
+    margin-bottom: 200px;
+    background-color: #f4f6f9;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.right-content-main-barang-container {
+    background-color: white;
+    min-height: 80px;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 25px;
+    margin-top: -15px;
+}
+
+.style-kondisi {
+    margin: auto;
+    padding: 10px;
+    border-radius: 25px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.style-tombol {
+    margin: auto;
+    font-size: 20px;
+}
+
+.center-tombol {
+    text-align: center;
+}
+
+.tombol-edit {
+    background-color: #58BC82!important;
+    margin-left: 2.5px;
+    margin-right: 2.5px;
+}
+
+.tombol-hapus {
+    background-color: #DA2C38!important;
+}
+
+.Baik {
+    background-color: #58BC82!important;
+}
+
+.Ringan {
+    background-color: #FF9F1C!important;
+}
+
+.Berat {
+    background-color: #DA2C38!important;
+}
+
+.right-content-main-barang-table-container {
+    color: #3a3a3a;
+    margin-top: 20px;
+}
+
+.right-content-main-barang-table { 
+    margin: 25px 0px 25px 0px;
+}
+
+
+.page-item.active .page-link {
+    background-color: #6777ef;
+    border-color: #6777ef;
+}
+
+.right-content-main-barang-container-tambah {
+    display: flex;
+    margin-left: auto;
+    background-color: #6777ef;
+    border-color: #6777ef;
+    font-weight: bold;
+}
+
+.right-content-main-barang-container-tambah-icon {
+    margin-right: 10px;
+    font-size: 25px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*Kode Dibawah untuk page LOGIN*/
+/*Kode Dibawah untuk page LOGIN*/
+/*Kode Dibawah untuk page LOGIN*/
+/*Kode Dibawah untuk page LOGIN*/
+/*Kode Dibawah untuk page LOGIN*/
+/*Kode Dibawah untuk page LOGIN*/
+
+.wrapper-login {
+    display: grid;
+    grid-template-columns: 400px 1fr;
+}
+
+.left-form {
+    background-color: white;
+    height: 100vh;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 50px;
+}
+
+.left-form-logo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    top: 30px;
+    width: 100%;
+}
+
+.left-form-title {
+    font-family: ;
+}
+
+.left-form-subtitle {
+    position: relative;
+    top: 70px;
+}
+
+.left-form-login {
+    position: relative;
+    top: 100px;
+}
+
+.left-form-button {
+    background-color: #6777ef;
+    border-color: #fcfcfc;
+    width: 85px;
+    height: 45px;
+    font-size: 13px;
+    border-radius: 5px;
+}
+
+.left-form-credit {
+    position: relative;
+    top: 150px;
+    width: inherit;
+}
+
+
+.right-image {
+    background-image: url("../img/bg-gif.gif");
+    /* background-image: url("../img/login-bg.jpg"); */
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-left: 100px;
+}
+
+.right-image-title {
+    position: absolute;
+    bottom: 140px;
+    color: white;
+    font-size: 60px;
+    font-weight: bold;
+}
+
+.right-image-subtitle {
+    position: absolute;
+    bottom: 120px;
+    color: white;
+    font-size: 20px;
+}
+
+.right-image-credit {
+    position: absolute;
+    bottom: 30px;
+    color: white;
+    font-size: 15px;
+}
