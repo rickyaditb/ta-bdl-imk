@@ -129,7 +129,7 @@ $result = mysqli_query($mysqli, "SELECT * FROM barang");
                                     <p class="badge bg-primary style-kondisi <?php echo $user_data['kondisi_barang'];?> "><?php echo $user_data['kondisi_barang'];?></p>
                                     </td>
                                     <td class="center-tombol">
-                                        <a href="crud/add_barang.php?id=<?php echo $user_data['kode_barang'];?>"><i class="badge bg-primary material-icons style-tombol tombol-edit">edit</i></a>
+                                        <a href="crud/edit_barang.php?id=<?php echo $user_data['kode_barang'];?>"><i class="badge bg-primary material-icons style-tombol tombol-edit">edit</i></a>
                                         <a href="crud/delete_barang.php?id=<?php echo $user_data['kode_barang'];?>"><i class="badge bg-primary material-icons style-tombol tombol-hapus">delete</i></a>
                                     </td>
                                     </tr>

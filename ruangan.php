@@ -133,7 +133,7 @@ $result = mysqli_query($mysqli, "SELECT * FROM ruangan");
                                     <td> <?php echo $hitung_jumlah_barang;?></td>
                                     <td>Rp. <?php echo number_format($ambil_baris_pertama, 0, '', '.');?></td>
                                     <td class="center-tombol">
-                                        <i class="badge bg-primary material-icons style-tombol tombol-edit">edit</i>
+                                        <a href="crud/edit_ruangan.php?id=<?php echo $user_data['kode_ruangan'];?>"><i class="badge bg-primary material-icons style-tombol tombol-edit">edit</i></a>
                                         <a href="crud/delete_ruangan.php?id=<?php echo $user_data['kode_ruangan'];?>"><i class="badge bg-primary material-icons style-tombol tombol-hapus">delete</i></a>
                                     </td>
                                     </tr>
