@@ -1,8 +1,9 @@
 <?php
 // Create database connection using config file
-include_once("../koneksi.php");
+include_once("koneksi.php");
 
 $resultx = mysqli_query($mysqli, "SELECT * FROM ruangan");
+$namaHalaman = "barang";
 ?>
 
 
@@ -27,60 +28,21 @@ $resultx = mysqli_query($mysqli, "SELECT * FROM ruangan");
 
 
 	<!-- Style -->
-	<link rel="stylesheet" href="../css/style.css">
+	<link rel="stylesheet" href="css/style.css">
 
 </head>
 
 <body>
 
-	<div class="sidenav shadow">
-		<div class="sidenav-container">
-			<center>
-				<img src="../img/logo2.png" class="logo"><br>
-			</center>
-			<ul class="sidenav-link">
-				<li>
-					<a class="btn btn-primary sidenav-button-no" href="../index.php"><i class="material-icons sidenav-icon">home</i>Beranda</a>
-				</li>
-				<li>
-					<a class="btn btn-primary sidenav-button" href="../barang.php"><i class="material-icons sidenav-icon">storage</i>Barang</a>
-				</li>
-				<li>
-					<a class="btn btn-primary sidenav-button-no" href="../ruangan.php"><i class="material-icons sidenav-icon">class</i>Ruangan</a>
-				</li>
-				<li>
-					<a class="btn btn-primary sidenav-button-no" href="../index.php"><i class="material-icons sidenav-icon">group</i>Credit</a>
-				</li>
-				<li>
-					<a class="btn btn-primary sidenav-button-no" href="../index.php"><i class="material-icons sidenav-icon">settings</i>Setting</a>
-				</li>
-				<li>
-					<a class="btn btn-danger sidenav-button-no" href="../index.php"><i class="material-icons sidenav-icon">logout</i>Logout</a>
-				</li>
-			</ul>
-		</div>
-	</div>
+	<?php include_once("partial/sidenav.php"); ?>
 
-	<div class="wrapper">
+	<div id="wrapper" class="wrapper">
 		<div class="left-dummy">
 
 		</div>
 		<div class="right-content">
 			<!--MAIN HEADER-->
-			<div class="right-content-header">
-				<div class="right-content-header-profile">
-					<!--the icon is only a placeholder atm-->
-					<div class="right-content-header-profile-left">
-						<i class="material-icons right-content-header-toggle-icon">menu</i>
-					</div>
-					<div class="right-content-header-profile-right">
-						<i class="material-icons right-content-header-profile-icon">account_circle</i>
-						<p class="right-content-header-profile-text">Halo, Administrator</p>
-						<i class="material-icons right-content-header-profile-icon-dropdown">arrow_drop_down</i>
-					</div>
-				</div>
-			</div>
-
+			<?php include_once("partial/header.php");?>
 			<!--MAIN CONTENT-->
 			<div class="right-content-main2">
 				<!--HEADER INDICATOR-->
@@ -102,20 +64,20 @@ $resultx = mysqli_query($mysqli, "SELECT * FROM ruangan");
 
 
 
-						include_once("../koneksi.php");
+						include_once("koneksi.php");
 
 						// kirim query ke database
 						$result = mysqli_query($mysqli, "UPDATE barang SET nama_barang='$nama',harga_barang='$harga',kondisi_barang='$kondisi',kode_ruangan='$ruangan',tanggal_masuk='$tanggal' WHERE kode_barang='$kode'");
 
 						// tampilkan pesan jika data selesai ditambahkan
-						header("Location: ../barang.php");
+						header("Location: barang.php");
 					}
 					?>
 					<?php
 					// Display selected user data based on id
 					// Getting id from url
 					$id = $_GET['id'];
-					
+
 
 					// Fetech user data based on id
 					$result = mysqli_query($mysqli, "SELECT * FROM barang WHERE kode_barang='$id'");
@@ -132,25 +94,31 @@ $resultx = mysqli_query($mysqli, "SELECT * FROM ruangan");
 					<form action="edit_barang.php" method="post" name="form1">
 						<div class="form-group">
 							<label>Kode Barang</label>
-							<input class="form-control"  name="kode_barang" value="<?php echo $kode ;?>" readonly>
+							<input class="form-control" name="kode_barang" value="<?php echo $kode; ?>" readonly>
 						</div>
 						<br>
 						<div class="form-group">
 							<label>Nama Barang</label>
-							<input class="form-control" placeholder="Masukan Nama Barang" name="nama_barang" value="<?php echo $nama ;?>"required>
+							<input class="form-control" placeholder="Masukan Nama Barang" name="nama_barang" value="<?php echo $nama; ?>" required>
 						</div>
 						<br>
 						<div class="form-group">
 							<label>Harga Barang</label>
-							<input type="number" class="form-control" placeholder="Masukan Harga Barang" name="harga_barang" value="<?php echo $harga ;?>" required>
+							<input type="number" class="form-control" placeholder="Masukan Harga Barang" name="harga_barang" value="<?php echo $harga; ?>" required>
 						</div>
 						<br>
 						<div class="form-group">
 							<label>Kondisi Barang</label>
 							<select class="form-select" aria-label="Default select example" name="kondisi_barang" required>
-								<option value="Baik" <?php if($kondisi === "Baik") {echo "selected";}?>>Baik</option>
-								<option value="Rusak Ringan" <?php if($kondisi === "Rusak Ringan") {echo "selected";}?>>Rusak Ringan</option>
-								<option value="Rusak Berat" <?php if($kondisi === "Rusak Berat") {echo "selected";}?>>Rusak Berat</option>
+								<option value="Baik" <?php if ($kondisi === "Baik") {
+															echo "selected";
+														} ?>>Baik</option>
+								<option value="Rusak Ringan" <?php if ($kondisi === "Rusak Ringan") {
+																	echo "selected";
+																} ?>>Rusak Ringan</option>
+								<option value="Rusak Berat" <?php if ($kondisi === "Rusak Berat") {
+																echo "selected";
+															} ?>>Rusak Berat</option>
 							</select>
 						</div>
 						<br>
@@ -161,7 +129,9 @@ $resultx = mysqli_query($mysqli, "SELECT * FROM ruangan");
 								<?php
 								while ($user_data = mysqli_fetch_array($resultx)) {
 								?>
-									<option value="<?php echo $user_data['kode_ruangan']; ?>"<?php if ($ruangan === $user_data['kode_ruangan']) {echo "selected";}?>><?php echo $user_data['kode_ruangan']; ?> (<?php echo $user_data['nama_ruangan']; ?>)</option>
+									<option value="<?php echo $user_data['kode_ruangan']; ?>" <?php if ($ruangan === $user_data['kode_ruangan']) {
+																									echo "selected";
+																								} ?>><?php echo $user_data['kode_ruangan']; ?> (<?php echo $user_data['nama_ruangan']; ?>)</option>
 								<?php
 								}
 								?>
@@ -170,7 +140,7 @@ $resultx = mysqli_query($mysqli, "SELECT * FROM ruangan");
 						<br>
 						<div class="form-group">
 							<label>Tanggal Masuk</label>
-							<input class="form-control" placeholder="Masukan Tanggal Masuk" name="tanggal_masuk" type="date" value="<?php echo $tanggal ;?>" required>
+							<input class="form-control" placeholder="Masukan Tanggal Masuk" name="tanggal_masuk" type="date" value="<?php echo $tanggal; ?>" required>
 						</div>
 						<br>
 						<button type="submit" class="btn btn-primary float-end left-form-button" name="update" value="Update"><b>Simpan</b></button>
@@ -186,6 +156,8 @@ $resultx = mysqli_query($mysqli, "SELECT * FROM ruangan");
 			</div>
 		</div>
 	</div>
+
+	<?php include_once("partial/sidenav-script.php"); ?>
 
 
 </body>

@@ -1,6 +1,6 @@
 <?php
 // include database connection file
-include_once("../koneksi.php");
+include_once("koneksi.php");
  
 // Get id from URL to delete that user
 $id = $_GET['id'];
@@ -9,5 +9,5 @@ $id = $_GET['id'];
 $result = mysqli_query($mysqli, "DELETE FROM ruangan WHERE kode_ruangan='$id'");
 
 // After delete redirect to Home, so that latest user list will be displayed.
-header ("location:../ruangan.php")
+header ("location:ruangan.php")
 ?>

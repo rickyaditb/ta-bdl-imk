@@ -1,8 +1,9 @@
 <?php
 // Create database connection using config file
-include_once("../koneksi.php");
+include_once("koneksi.php");
 
 $result = mysqli_query($mysqli, "SELECT * FROM ruangan");
+$namaHalaman = "barang";
 ?>
 
 
@@ -27,59 +28,21 @@ $result = mysqli_query($mysqli, "SELECT * FROM ruangan");
 
 
 	<!-- Style -->
-	<link rel="stylesheet" href="../css/style.css">
+	<link rel="stylesheet" href="css/style.css">
 
 </head>
 
 <body>
 
-	<div class="sidenav shadow">
-		<div class="sidenav-container">
-			<center>
-				<img src="../img/logo2.png" class="logo"><br>
-			</center>
-			<ul class="sidenav-link">
-				<li>
-					<a class="btn btn-primary sidenav-button-no" href="../index.php"><i class="material-icons sidenav-icon">home</i>Beranda</a>
-				</li>
-				<li>
-					<a class="btn btn-primary sidenav-button" href="../barang.php"><i class="material-icons sidenav-icon">storage</i>Barang</a>
-				</li>
-				<li>
-					<a class="btn btn-primary sidenav-button-no" href="../ruangan.php"><i class="material-icons sidenav-icon">class</i>Ruangan</a>
-				</li>
-				<li>
-					<a class="btn btn-primary sidenav-button-no" href="../index.php"><i class="material-icons sidenav-icon">group</i>Credit</a>
-				</li>
-				<li>
-					<a class="btn btn-primary sidenav-button-no" href="../index.php"><i class="material-icons sidenav-icon">settings</i>Setting</a>
-				</li>
-				<li>
-					<a class="btn btn-danger sidenav-button-no" href="../index.php"><i class="material-icons sidenav-icon">logout</i>Logout</a>
-				</li>
-			</ul>
-		</div>
-	</div>
+	<?php include_once("partial/sidenav.php"); ?>
 
-	<div class="wrapper">
+	<div id="wrapper" class="wrapper">
 		<div class="left-dummy">
 
 		</div>
 		<div class="right-content">
 			<!--MAIN HEADER-->
-			<div class="right-content-header">
-				<div class="right-content-header-profile">
-					<!--the icon is only a placeholder atm-->
-					<div class="right-content-header-profile-left">
-						<i class="material-icons right-content-header-toggle-icon">menu</i>
-					</div>
-					<div class="right-content-header-profile-right">
-						<i class="material-icons right-content-header-profile-icon">account_circle</i>
-						<p class="right-content-header-profile-text">Halo, Administrator</p>
-						<i class="material-icons right-content-header-profile-icon-dropdown">arrow_drop_down</i>
-					</div>
-				</div>
-			</div>
+			<?php include_once("partial/header.php");?>
 
 			<!--MAIN CONTENT-->
 			<div class="right-content-main2">
@@ -102,13 +65,13 @@ $result = mysqli_query($mysqli, "SELECT * FROM ruangan");
 
 
 
-						include_once("../koneksi.php");
+						include_once("koneksi.php");
 
 						// kirim query ke database
 						$result = mysqli_query($mysqli, "INSERT INTO barang(kode_barang,nama_barang,harga_barang,kondisi_barang,kode_ruangan,tanggal_masuk) VALUES('$kode','$nama','$harga','$kondisi','$ruangan','$tanggal')");
 
 						// tampilkan pesan jika data selesai ditambahkan
-						echo "<div class='alert alert-success'>Barang berhasil ditambahkan, <a role='alert' href='../barang.php'>Klik Disini</a> untuk kembali ke halaman Daftar Barang</div>";
+						echo "<div class='alert alert-success'>Barang berhasil ditambahkan, <a role='alert' href='barang.php'>Klik Disini</a> untuk kembali ke halaman Daftar Barang</div>";
 					}
 					?>
 					<form action="add_barang.php" method="post" name="form1">
@@ -169,6 +132,8 @@ $result = mysqli_query($mysqli, "SELECT * FROM ruangan");
 			</div>
 		</div>
 	</div>
+
+	<?php include_once("partial/sidenav-script.php"); ?>
 
 
 </body>

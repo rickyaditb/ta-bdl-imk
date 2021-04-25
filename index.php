@@ -1,41 +1,42 @@
 <?php
-                // Create database connection using config file
-                include_once("koneksi.php");
+// Create database connection using config file
+include_once("koneksi.php");
+$namaHalaman = "beranda";
 
-                $query_barang_total = mysqli_query($mysqli, "SELECT * FROM barang");
-                $query_barang_baik = mysqli_query($mysqli, "SELECT *  FROM barang WHERE kondisi_barang LIKE '%Baik%'");
-                $query_barang_ringan = mysqli_query($mysqli, "SELECT *  FROM barang WHERE kondisi_barang LIKE '%Rusak Ringan%'");
-                $query_barang_berat = mysqli_query($mysqli, "SELECT *  FROM barang WHERE kondisi_barang LIKE '%Rusak Berat%'");
+$query_barang_total = mysqli_query($mysqli, "SELECT * FROM barang");
+$query_barang_baik = mysqli_query($mysqli, "SELECT *  FROM barang WHERE kondisi_barang LIKE '%Baik%'");
+$query_barang_ringan = mysqli_query($mysqli, "SELECT *  FROM barang WHERE kondisi_barang LIKE '%Rusak Ringan%'");
+$query_barang_berat = mysqli_query($mysqli, "SELECT *  FROM barang WHERE kondisi_barang LIKE '%Rusak Berat%'");
 
 
-                $jumlah_barang_total = mysqli_num_rows($query_barang_total);
-                $jumlah_barang_baik = mysqli_num_rows($query_barang_baik);
-                $jumlah_barang_ringan = mysqli_num_rows($query_barang_ringan);
-                $jumlah_barang_berat = mysqli_num_rows($query_barang_berat);
+$jumlah_barang_total = mysqli_num_rows($query_barang_total);
+$jumlah_barang_baik = mysqli_num_rows($query_barang_baik);
+$jumlah_barang_ringan = mysqli_num_rows($query_barang_ringan);
+$jumlah_barang_berat = mysqli_num_rows($query_barang_berat);
 
-                $tahun_0 = date("Y");
-                $tahun_1 = date("Y")-1;
-                $tahun_2 = date("Y")-2;
-                $tahun_3 = date("Y")-3;
-                $tahun_4 = date("Y")-4;
-                $tahun_5 = date("Y")-5;
-                $tahun_x = date("Y")-20;
+$tahun_0 = date("Y");
+$tahun_1 = date("Y") - 1;
+$tahun_2 = date("Y") - 2;
+$tahun_3 = date("Y") - 3;
+$tahun_4 = date("Y") - 4;
+$tahun_5 = date("Y") - 5;
+$tahun_x = date("Y") - 20;
 
-                $query_tahun_0 = mysqli_query($mysqli, "SELECT * FROM barang WHERE tanggal_masuk >='$tahun_0-01-01 00:00:00' AND tanggal_masuk <='$tahun_0-12-31 23:59:59';");
-                $query_tahun_1 = mysqli_query($mysqli, "SELECT * FROM barang WHERE tanggal_masuk >='$tahun_1-01-01 00:00:00' AND tanggal_masuk <='$tahun_1-12-31 23:59:59';");
-                $query_tahun_2 = mysqli_query($mysqli, "SELECT * FROM barang WHERE tanggal_masuk >='$tahun_2-01-01 00:00:00' AND tanggal_masuk <='$tahun_2-12-31 23:59:59';");
-                $query_tahun_3 = mysqli_query($mysqli, "SELECT * FROM barang WHERE tanggal_masuk >='$tahun_3-01-01 00:00:00' AND tanggal_masuk <='$tahun_3-12-31 23:59:59';");
-                $query_tahun_4 = mysqli_query($mysqli, "SELECT * FROM barang WHERE tanggal_masuk >='$tahun_4-01-01 00:00:00' AND tanggal_masuk <='$tahun_4-12-31 23:59:59';");
-                $query_tahun_5_x = mysqli_query($mysqli, "SELECT * FROM barang WHERE tanggal_masuk >='$tahun_x-01-01 00:00:00' AND tanggal_masuk <='$tahun_5-12-31 23:59:59';");
+$query_tahun_0 = mysqli_query($mysqli, "SELECT * FROM barang WHERE tanggal_masuk >='$tahun_0-01-01 00:00:00' AND tanggal_masuk <='$tahun_0-12-31 23:59:59';");
+$query_tahun_1 = mysqli_query($mysqli, "SELECT * FROM barang WHERE tanggal_masuk >='$tahun_1-01-01 00:00:00' AND tanggal_masuk <='$tahun_1-12-31 23:59:59';");
+$query_tahun_2 = mysqli_query($mysqli, "SELECT * FROM barang WHERE tanggal_masuk >='$tahun_2-01-01 00:00:00' AND tanggal_masuk <='$tahun_2-12-31 23:59:59';");
+$query_tahun_3 = mysqli_query($mysqli, "SELECT * FROM barang WHERE tanggal_masuk >='$tahun_3-01-01 00:00:00' AND tanggal_masuk <='$tahun_3-12-31 23:59:59';");
+$query_tahun_4 = mysqli_query($mysqli, "SELECT * FROM barang WHERE tanggal_masuk >='$tahun_4-01-01 00:00:00' AND tanggal_masuk <='$tahun_4-12-31 23:59:59';");
+$query_tahun_5_x = mysqli_query($mysqli, "SELECT * FROM barang WHERE tanggal_masuk >='$tahun_x-01-01 00:00:00' AND tanggal_masuk <='$tahun_5-12-31 23:59:59';");
 
-                $jumlah_tahun_0 = mysqli_num_rows($query_tahun_0);
-                $jumlah_tahun_1 = mysqli_num_rows($query_tahun_1);
-                $jumlah_tahun_2 = mysqli_num_rows($query_tahun_2);
-                $jumlah_tahun_3 = mysqli_num_rows($query_tahun_3);
-                $jumlah_tahun_4 = mysqli_num_rows($query_tahun_4);
-                $jumlah_tahun_5_x = mysqli_num_rows($query_tahun_5_x);
+$jumlah_tahun_0 = mysqli_num_rows($query_tahun_0);
+$jumlah_tahun_1 = mysqli_num_rows($query_tahun_1);
+$jumlah_tahun_2 = mysqli_num_rows($query_tahun_2);
+$jumlah_tahun_3 = mysqli_num_rows($query_tahun_3);
+$jumlah_tahun_4 = mysqli_num_rows($query_tahun_4);
+$jumlah_tahun_5_x = mysqli_num_rows($query_tahun_5_x);
 
-                ?>
+?>
 
 
 
@@ -73,54 +74,21 @@
 
 <body>
 
-    <div class="sidenav shadow">
-        <div class="sidenav-container">
-            <center>
-                <img src="img/logo2.png" class="logo"><br>
-            </center>
-            <ul class="sidenav-link">
-                <li>
-                    <a class="btn btn-primary sidenav-button" href="index.php"><i class="material-icons sidenav-icon">home</i>Beranda</a>
-                </li>
-                <li>
-                    <a class="btn btn-primary sidenav-button-no" href="barang.php"><i class="material-icons sidenav-icon">storage</i>Barang</a>
-                </li>
-                <li>
-                    <a class="btn btn-primary sidenav-button-no" href="ruangan.php"><i class="material-icons sidenav-icon">class</i>Ruangan</a>
-                </li>
-                <li>
-                    <a class="btn btn-primary sidenav-button-no" href="index.php"><i class="material-icons sidenav-icon">group</i>Credit</a>
-                </li>
-                <li>
-                    <a class="btn btn-primary sidenav-button-no" href="index.php"><i class="material-icons sidenav-icon">settings</i>Setting</a>
-                </li>
-                <li>
-                    <a class="btn btn-danger sidenav-button-no" href="index.php"><i class="material-icons sidenav-icon">logout</i>Logout</a>
-                </li>
-            </ul>
-        </div>
-    </div>
 
-    <div class="wrapper">
+    <?php include_once("partial/sidenav.php");?>
+
+
+
+
+
+
+    <div id="wrapper" class="wrapper">
         <div class="left-dummy">
 
         </div>
         <div class="right-content">
             <!--MAIN HEADER-->
-            <div class="right-content-header">
-                <div class="right-content-header-profile">
-                    <!--the icon is only a placeholder atm-->
-                    <div class="right-content-header-profile-left">
-                        <i class="material-icons right-content-header-toggle-icon">menu</i>
-                    </div>
-                    <div class="right-content-header-profile-right">
-                        <i class="material-icons right-content-header-profile-icon">account_circle</i>
-                        <p class="right-content-header-profile-text">Halo, Administrator</p>
-                        <i class="material-icons right-content-header-profile-icon-dropdown">arrow_drop_down</i>
-                    </div>
-                </div>
-
-            </div>
+            <?php include_once("partial/header.php");?>
             <!--MAIN CONTENT-->
             <div class="right-content-main">
                 <!--HEADER INDICATOR-->
@@ -208,11 +176,11 @@
         let bulan = new Chart(myChart, {
             type: 'bar',
             data: {
-                labels: ['<?php echo $tahun_5."<";?>', '<?php echo $tahun_4;?>', '<?php echo $tahun_3;?>', '<?php echo $tahun_2;?>', '<?php echo $tahun_1;?>', '<?php echo $tahun_0;?>'],
+                labels: ['<?php echo $tahun_5 . "<"; ?>', '<?php echo $tahun_4; ?>', '<?php echo $tahun_3; ?>', '<?php echo $tahun_2; ?>', '<?php echo $tahun_1; ?>', '<?php echo $tahun_0; ?>'],
                 datasets: [{
                     label: 'Jumlah Barang',
                     data: [
-                        <?php echo $jumlah_tahun_5_x;?>, <?php echo $jumlah_tahun_4;?>, <?php echo $jumlah_tahun_3;?>, <?php echo $jumlah_tahun_2;?>, <?php echo $jumlah_tahun_1;?>, <?php echo $jumlah_tahun_0;?>
+                        <?php echo $jumlah_tahun_5_x; ?>, <?php echo $jumlah_tahun_4; ?>, <?php echo $jumlah_tahun_3; ?>, <?php echo $jumlah_tahun_2; ?>, <?php echo $jumlah_tahun_1; ?>, <?php echo $jumlah_tahun_0; ?>
                     ],
                     backgroundColor: 'rgba(103, 119, 239, 0.7)',
                     borderWidth: 0,
@@ -280,7 +248,7 @@
 
 
 
-
+    <?php include_once("partial/sidenav-script.php"); ?>
 
 </body>
 

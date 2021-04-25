@@ -1,7 +1,8 @@
 <?php
+ob_start(); // buffer flush
 // Create database connection using config file
-include_once("../koneksi.php");
-
+include_once("koneksi.php");
+$namaHalaman = "ruangan";
 ?>
 
 
@@ -26,60 +27,22 @@ include_once("../koneksi.php");
 
 
     <!-- Style -->
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="css/style.css">
 
 </head>
 
 <body>
 
-    <div class="sidenav shadow">
-        <div class="sidenav-container">
-            <center>
-                <img src="../img/logo2.png" class="logo"><br>
-            </center>
-            <ul class="sidenav-link">
-                <li>
-                    <a class="btn btn-primary sidenav-button-no" href="../index.php"><i class="material-icons sidenav-icon">home</i>Beranda</a>
-                </li>
-                <li>
-                    <a class="btn btn-primary sidenav-button-no" href="../barang.php"><i class="material-icons sidenav-icon">storage</i>Barang</a>
-                </li>
-                <li>
-                    <a class="btn btn-primary sidenav-button" href="../ruangan.php"><i class="material-icons sidenav-icon">class</i>Ruangan</a>
-                </li>
-                <li>
-                    <a class="btn btn-primary sidenav-button-no" href="../index.php"><i class="material-icons sidenav-icon">group</i>Credit</a>
-                </li>
-                <li>
-                    <a class="btn btn-primary sidenav-button-no" href="../index.php"><i class="material-icons sidenav-icon">settings</i>Setting</a>
-                </li>
-                <li>
-                    <a class="btn btn-danger sidenav-button-no" href="../index.php"><i class="material-icons sidenav-icon">logout</i>Logout</a>
-                </li>
-            </ul>
-        </div>
-    </div>
+    <?php include_once("partial/sidenav.php"); ?>
 
-    <div class="wrapper">
+    <div id="wrapper" class="wrapper">
         <div class="left-dummy">
 
         </div>
         <div class="right-content">
-            <!--MAIN HEADER-->
-            <div class="right-content-header">
-                <div class="right-content-header-profile">
-                    <!--the icon is only a placeholder atm-->
-                    <div class="right-content-header-profile-left">
-                        <i class="material-icons right-content-header-toggle-icon">menu</i>
-                    </div>
-                    <div class="right-content-header-profile-right">
-                        <i class="material-icons right-content-header-profile-icon">account_circle</i>
-                        <p class="right-content-header-profile-text">Halo, Administrator</p>
-                        <i class="material-icons right-content-header-profile-icon-dropdown">arrow_drop_down</i>
-                    </div>
-                </div>
-            </div>
-            <!--MAIN CONTENT-->
+			<!--MAIN HEADER-->
+			<?php include_once("partial/header.php");?>
+			<!--MAIN CONTENT-->
             <div class="right-content-main2">
                 <!--HEADER INDICATOR-->
                 <div class="right-content-main-heading">
@@ -94,13 +57,13 @@ include_once("../koneksi.php");
                         $kode = $_POST['kode_ruangan'];
                         $nama = $_POST['nama_ruangan'];
 
-                        include_once("../koneksi.php");
+                        include_once("koneksi.php");
 
                         // kirim query ke database
                         $result = mysqli_query($mysqli, "UPDATE ruangan SET nama_ruangan='$nama' WHERE kode_ruangan='$kode'");
 
                         // tampilkan pesan jika data selesai ditambahkan
-                        header("Location: ../ruangan.php");
+                        header("Location: ruangan.php");
                     }
                     ?>
                     <?php
@@ -120,12 +83,12 @@ include_once("../koneksi.php");
                     <form action="edit_ruangan.php" method="post" name="form1">
                         <div class="form-group">
                             <label>Kode Ruangan</label>
-                            <input class="form-control" placeholder="Masukan Kode Ruangan" name="kode_ruangan" value="<?php echo $kode;?>" readonly>
+                            <input class="form-control" placeholder="Masukan Kode Ruangan" name="kode_ruangan" value="<?php echo $kode; ?>" readonly>
                         </div>
                         <br>
                         <div class="form-group">
                             <label>Nama Ruangan</label>
-                            <input class="form-control" placeholder="Masukan Nama Ruangan" name="nama_ruangan" value="<?php echo $nama;?>" required>
+                            <input class="form-control" placeholder="Masukan Nama Ruangan" name="nama_ruangan" value="<?php echo $nama; ?>" required>
                         </div>
                         <br>
                         <button type="submit" class="btn btn-primary float-end left-form-button" name="update" value="Update"><b>Simpan</b></button>
@@ -138,6 +101,7 @@ include_once("../koneksi.php");
             </div>
         </div>
     </div>
+    <?php include_once("partial/sidenav-script.php"); ?>
 
 
 </body>
