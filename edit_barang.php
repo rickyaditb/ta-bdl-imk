@@ -42,7 +42,7 @@ $namaHalaman = "barang";
 		</div>
 		<div class="right-content">
 			<!--MAIN HEADER-->
-			<?php include_once("partial/header.php");?>
+			<?php include_once("partial/header.php"); ?>
 			<!--MAIN CONTENT-->
 			<div class="right-content-main2">
 				<!--HEADER INDICATOR-->
@@ -102,8 +102,9 @@ $namaHalaman = "barang";
 							<input class="form-control" placeholder="Masukan Nama Barang" name="nama_barang" value="<?php echo $nama; ?>" required>
 						</div>
 						<br>
-						<div class="form-group">
-							<label>Harga Barang</label>
+						Harga Barang
+						<div class="form-group input-group">
+							<span class="input-group-text">Rp.</span>
 							<input type="number" class="form-control" placeholder="Masukan Harga Barang" name="harga_barang" value="<?php echo $harga; ?>" required>
 						</div>
 						<br>

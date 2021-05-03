@@ -75,7 +75,7 @@ $jumlah_tahun_5_x = mysqli_num_rows($query_tahun_5_x);
 <body>
 
 
-    <?php include_once("partial/sidenav.php");?>
+    <?php include_once("partial/sidenav.php"); ?>
 
 
 
@@ -88,7 +88,7 @@ $jumlah_tahun_5_x = mysqli_num_rows($query_tahun_5_x);
         </div>
         <div class="right-content">
             <!--MAIN HEADER-->
-            <?php include_once("partial/header.php");?>
+            <?php include_once("partial/header.php"); ?>
             <!--MAIN CONTENT-->
             <div class="right-content-main">
                 <!--HEADER INDICATOR-->
@@ -98,62 +98,69 @@ $jumlah_tahun_5_x = mysqli_num_rows($query_tahun_5_x);
                     </div>
                 </div>
                 <!--MAIN STAT-->
-                <div class="right-content-main-stat">
-                    <div class="right-content-main-stat-container">
-                        <!--START PERTAMA-->
-                        <div class="right-content-main-stat-wrapper shadow">
-                            <div class="right-content-main-stat-1-icon-container">
-                                <i class="material-icons sidenav-icon right-content-main-stat-1-icon">storage</i>
+                <div class="right-content-main-stat row">
+                    <div class="first col row">
+                        <div class="right-content-main-stat-container col-md">
+                            <!--START PERTAMA-->
+                            <div class="right-content-main-stat-wrapper shadow">
+                                <div class="right-content-main-stat-1-icon-container">
+                                    <i class="material-icons sidenav-icon right-content-main-stat-1-icon">storage</i>
+                                </div>
+                                <div class="right-content-main-stat-text">
+                                    <p class="right-content-main-stat-text-title">Total Barang</p>
+                                    <p class="right-content-main-stat-text-subtitle"><?php echo $jumlah_barang_total; ?></p>
+                                </div>
                             </div>
-                            <div class="right-content-main-stat-text">
-                                <p class="right-content-main-stat-text-title">Total Barang</p>
-                                <p class="right-content-main-stat-text-subtitle"><?php echo $jumlah_barang_total; ?></p>
+                        </div>
+                        <div class="right-content-main-stat-container col-md">
+                            <!--START KEDUA-->
+                            <div class="right-content-main-stat-wrapper shadow">
+                                <div class="right-content-main-stat-2-icon-container">
+                                    <i class="material-icons sidenav-icon right-content-main-stat-2-icon">check_circle</i>
+                                </div>
+                                <div class="right-content-main-stat-text">
+                                    <p class="right-content-main-stat-text-title">Cukup Baik</p>
+                                    <p class="right-content-main-stat-text-subtitle"><?php echo $jumlah_barang_baik; ?></p>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="right-content-main-stat-container">
-                        <!--START KEDUA-->
-                        <div class="right-content-main-stat-wrapper shadow">
-                            <div class="right-content-main-stat-2-icon-container">
-                                <i class="material-icons sidenav-icon right-content-main-stat-2-icon">check_circle</i>
+                    <div class="second col row">
+                        <div class="right-content-main-stat-container col-md">
+                            <!--START KETIGA-->
+                            <div class="right-content-main-stat-wrapper shadow">
+                                <div class="right-content-main-stat-3-icon-container">
+                                    <i class="material-icons sidenav-icon right-content-main-stat-2-icon">error</i>
+                                </div>
+                                <div class="right-content-main-stat-text">
+                                    <p class="right-content-main-stat-text-title">Rusak Ringan</p>
+                                    <p class="right-content-main-stat-text-subtitle"><?php echo $jumlah_barang_ringan; ?></p>
+                                </div>
                             </div>
-                            <div class="right-content-main-stat-text">
-                                <p class="right-content-main-stat-text-title">Cukup Baik</p>
-                                <p class="right-content-main-stat-text-subtitle"><?php echo $jumlah_barang_baik; ?></p>
+                        </div>
+                        <div class="right-content-main-stat-container col-md">
+                            <!--START KEEMPAT-->
+                            <div class="right-content-main-stat-wrapper shadow">
+                                <div class="right-content-main-stat-4-icon-container">
+                                    <i class="material-icons sidenav-icon right-content-main-stat-2-icon">remove_circle</i>
+                                </div>
+                                <div class="right-content-main-stat-text">
+                                    <p class="right-content-main-stat-text-title">Rusak Berat</p>
+                                    <p class="right-content-main-stat-text-subtitle"><?php echo $jumlah_barang_berat; ?></p>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="right-content-main-stat-container">
-                        <!--START KETIGA-->
-                        <div class="right-content-main-stat-wrapper shadow">
-                            <div class="right-content-main-stat-3-icon-container">
-                                <i class="material-icons sidenav-icon right-content-main-stat-2-icon">error</i>
-                            </div>
-                            <div class="right-content-main-stat-text">
-                                <p class="right-content-main-stat-text-title">Rusak Ringan</p>
-                                <p class="right-content-main-stat-text-subtitle"><?php echo $jumlah_barang_ringan; ?></p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="right-content-main-stat-container">
-                        <!--START KEEMPAT-->
-                        <div class="right-content-main-stat-wrapper shadow">
-                            <div class="right-content-main-stat-4-icon-container">
-                                <i class="material-icons sidenav-icon right-content-main-stat-2-icon">remove_circle</i>
-                            </div>
-                            <div class="right-content-main-stat-text">
-                                <p class="right-content-main-stat-text-title">Rusak Berat</p>
-                                <p class="right-content-main-stat-text-subtitle"><?php echo $jumlah_barang_berat; ?></p>
-                            </div>
-                        </div>
-                    </div>
+
+
                 </div>
                 <!--MAIN GRAPH-->
-                <div class="right-content-main-graph">
-                    <div class="right-content-main-graph-container">
+
+                <div class="right-content-main-graph row">
+                    <div class="right-content-main-graph-container col-lg">
                         <canvas id="chartsatu" class="shadow chartstyle"></canvas>
                     </div>
-                    <div class="right-content-main-graph-container">
+                    <div class="right-content-main-graph-container col-lg">
                         <canvas id="chartdua" class="shadow chartstyle"></canvas>
                     </div>
                 </div>
@@ -173,7 +180,7 @@ $jumlah_tahun_5_x = mysqli_num_rows($query_tahun_5_x);
     <!--Script Untuk Setting ChartJs-->
     <script>
         let myChart = document.getElementById('chartsatu').getContext('2d');
-        let bulan = new Chart(myChart, {
+        let tahun = new Chart(myChart, {
             type: 'bar',
             data: {
                 labels: ['<?php echo $tahun_5 . "<"; ?>', '<?php echo $tahun_4; ?>', '<?php echo $tahun_3; ?>', '<?php echo $tahun_2; ?>', '<?php echo $tahun_1; ?>', '<?php echo $tahun_0; ?>'],
@@ -214,7 +221,7 @@ $jumlah_tahun_5_x = mysqli_num_rows($query_tahun_5_x);
 
 
         let myChart2 = document.getElementById('chartdua').getContext('2d');
-        let bulan2 = new Chart(myChart2, {
+        let kondisi = new Chart(myChart2, {
             type: 'pie',
             data: {
                 labels: ['Berat', 'Ringan', 'Baik'],

@@ -2,7 +2,7 @@
     <div class="right-content-header-profile">
         <!--the icon is only a placeholder atm-->
         <div class="right-content-header-profile-left">
-            <i id="tombol" class="material-icons right-content-header-toggle-icon" style="cursor: pointer;">menu</i>
+            <button id="tombol"><i class="material-icons right-content-header-toggle-icon">menu</i></button>
         </div>
         <div class="right-content-header-profile-right">
             <i class="material-icons right-content-header-profile-icon">account_circle</i>

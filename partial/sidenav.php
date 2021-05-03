@@ -1,7 +1,8 @@
 <div id="sidenav" class="sidenav shadow">
     <div class="sidenav-container">
         <center>
-            <img src="img/logo2.png" class="logo"><br>
+            <img id="sidenav-logo" src="img/logo2.png" class="logo">
+            <img id="sidenav-textx" class="sidenav-textx" src="img/logo2-minimized.png">
         </center>
         <ul class="sidenav-link">
             <li>
@@ -36,14 +37,8 @@
             </li>
             <li>
                 <a class="btn btn-primary sidenav-button-no" href="index.php">
-                    <i class="material-icons sidenav-icon">group</i>
-                    <p class="sidenav-text">Credit</p>
-                </a>
-            </li>
-            <li>
-                <a class="btn btn-primary sidenav-button-no" href="index.php">
-                    <i class="material-icons sidenav-icon">settings</i>
-                    <p class="sidenav-text">Setting</p>
+                    <i class="material-icons sidenav-icon">history</i>
+                    <p class="sidenav-text">Riwayat</p>
                 </a>
             </li>
             <li>
@@ -54,4 +49,34 @@
             </li>
         </ul>
     </div>
+</div>
+
+<div class="topnav">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <img src="img/logo2.png" class="navbar-brand logo-mini">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.php">Beranda</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="barang.php">Barang</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="ruangan.php">Ruangan</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Riwayat</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 </div>

@@ -121,23 +121,11 @@ $namaHalaman = "barang";
         /*Script untuk Table*/
         $(document).ready(function() {
             $('#tableku').DataTable({
+                "lengthMenu": [ 10, 25, 50, 75, 100 ],
                 "language": {
-                    "lengthMenu": "Menampilkan _MENU_ Entri",
-                    "zeroRecords": "Nothing found - sorry",
-                    "info": "",
-                    /*
-                    "info": "Menampilkan halaman _PAGE_ dari _PAGES_ halaman",
-                    */
-                    "infoEmpty": "No records available",
-                    "infoFiltered": "(filtered from _MAX_ total records)",
-                    "paginate": {
-                        "first": "First",
-                        "last": "Last",
-                        "next": "Selanjutnya",
-                        "previous": "Sebelumnya"
-                    },
-                    "search": "Cari :"
+                    "url":"//cdn.datatables.net/plug-ins/1.10.24/i18n/Indonesian.json"
                 }
+                
             });
         });
     </script>

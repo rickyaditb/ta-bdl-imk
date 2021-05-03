@@ -27,8 +27,13 @@ $namaHalaman = "barang";
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 
+
+
+
+
 	<!-- Style -->
 	<link rel="stylesheet" href="css/style.css">
+
 
 </head>
 
@@ -85,8 +90,9 @@ $namaHalaman = "barang";
 							<input class="form-control" placeholder="Masukan Nama Barang" name="nama_barang" required>
 						</div>
 						<br>
-						<div class="form-group">
-							<label>Harga Barang</label>
+						Harga Barang
+						<div class="form-group input-group">
+							<span class="input-group-text">Rp.</span>
 							<input type="number" class="form-control" placeholder="Masukan Harga Barang" name="harga_barang" required>
 						</div>
 						<br>
@@ -134,6 +140,7 @@ $namaHalaman = "barang";
 	</div>
 
 	<?php include_once("partial/sidenav-script.php"); ?>
+
 
 
 </body>

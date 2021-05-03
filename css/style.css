@@ -1,15 +1,26 @@
-
-/* Chrome, Safari, Edge, Opera */
+/* Chrome, Safari, Edge, Opera
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
+ */
 
 /* Firefox */
 input[type=number] {
-  -moz-appearance: textfield;
+    -moz-appearance: textfield;
 }
+
+#tombol {
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+}
+
 
 
 
@@ -20,21 +31,35 @@ input[type=number] {
 /* Sidenav */
 
 .sidenav {
-    height: 100%; 
-    width: 220px; 
-    position: fixed; 
-    z-index: 1; /* Biar gak ketimpa */
+    height: 100%;
+    width: 220px;
+    position: fixed;
+    z-index: 1;
+    /* Biar gak ketimpa */
     top: 0;
     left: 0;
-    background-color: #fcfcfc; 
-    overflow-x: hidden; 
-    border-right:1px solid #e9e9e9; /*Pembatas*/
-    transition: 0.5s;
+    background-color: #fcfcfc;
+    overflow-x: hidden;
+    border-right: 1px solid #e9e9e9;
+    /*Pembatas*/
+
+
 }
 
+
+
 .logo {
-    padding-bottom: 20px;
+    margin-top: 10px;
     width: 100%;
+}
+
+.sidenav-textx {
+    position: relative;
+    top: -30px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50px;
+    opacity: 0;
 }
 
 .sidenav-container {
@@ -43,8 +68,10 @@ input[type=number] {
 
 .sidenav-link {
     list-style: none;
+    position: relative;
+    top: -30px;
     padding: 0;
-    margin-bottom: 100px;
+
 }
 
 .sidenav-button {
@@ -61,7 +88,6 @@ input[type=number] {
 .sidenav-text {
     margin-top: auto;
     margin-bottom: auto;
-    transition: 0.5s;
 }
 
 .sidenav-button-no {
@@ -77,9 +103,9 @@ input[type=number] {
 }
 
 .sidenav-icon {
-   padding-right: 10px;
-   margin-top: auto;
-   margin-bottom: auto;
+    padding-right: 10px;
+    margin-top: auto;
+    margin-bottom: auto;
 }
 
 .sidenav-text {
@@ -96,8 +122,8 @@ a.sidenav-button-no {
     align-items: center;
 }
 
-a.btn-primary:hover{
-    background-color:inherit;
+a.btn-primary:hover {
+    background-color: inherit;
     border-color: inherit;
     color: #a5aab6;
 }
@@ -110,7 +136,7 @@ a.btn-primary:hover{
 .wrapper {
     display: grid;
     grid-template-columns: 220px 1fr;
-    transition: 0.5s;
+
 }
 
 .left-dummy {
@@ -121,6 +147,7 @@ a.btn-primary:hover{
 .right-content {
     display: grid;
     grid-template-rows: 100px 1fr 50px;
+
 }
 
 /* Header property*/
@@ -128,7 +155,8 @@ a.btn-primary:hover{
     background-color: #6777ef;
     color: black;
     text-align: center;
-    border-bottom:1px solid wheat; /*Pembatas*/
+    border-bottom: 1px solid wheat;
+    /*Pembatas*/
 
 }
 
@@ -153,7 +181,7 @@ a.btn-primary:hover{
     height: 100%;
     font-size: 40px;
     margin-right: 10px;
-}    
+}
 
 .right-content-header-toggle-icon {
     position: relative;
@@ -175,13 +203,11 @@ a.btn-primary:hover{
 /* Main property*/
 
 .right-content-main {
-    display: grid;
-    grid-template-rows: 95px 130px 1fr 1fr;
-    grid-gap: 0px;
     margin-bottom: 200px;
     background-color: #f4f6f9;
     padding-left: 30px;
     padding-right: 30px;
+
 }
 
 .right-content-main-heading {
@@ -190,30 +216,31 @@ a.btn-primary:hover{
 
 .right-content-main-heading-container {
     background-color: white;
-    height: 100%;
     border-radius: 5px;
-    padding: 16px;
     padding-left: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
     position: relative;
     top: -30px;
 }
 
 .right-content-main-heading-text {
-    font-weight:600;
+    font-weight: 600;
     color: #242424;
     font-size: x-large;
+    margin-top: 10px;
 }
 
 .right-content-main-stat {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-gap: 15px;
     position: relative;
+    margin-left: 0px;
+    margin-right: 0px;
     top: -30px;
 }
 
 .right-content-main-stat-container {
-    padding: 10px;
+    margin-top: 10px;
+    position: relative;
 }
 
 .right-content-main-stat-wrapper {
@@ -253,7 +280,7 @@ a.btn-primary:hover{
 
 
 .right-content-main-stat-text-title {
-    margin-bottom: 0px;   
+    margin-bottom: 0px;
     color: #67676b;
 }
 
@@ -299,14 +326,14 @@ a.btn-primary:hover{
 
 
 .right-content-main-graph {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    position: relative;
+    top: -30px;
+    margin-left: 0px;
+    margin-right: 0px;
 }
 
 .right-content-main-graph-container {
-    position: relative;
-    padding: 10px;
-    top: -20px;
+    margin-top: 25px;
 }
 
 .chartstyle {
@@ -317,17 +344,15 @@ a.btn-primary:hover{
 }
 
 
-.right-content-main-history {
-
-    
-}
+.right-content-main-history {}
 
 .right-content-footer {
     background-color: white;
     color: black;
     text-align: center;
-    border-top:1px solid wheat; /*Pembatas*/
- 
+    border-top: 1px solid wheat;
+    /*Pembatas*/
+
 }
 
 
@@ -335,7 +360,7 @@ a.btn-primary:hover{
 
 .right-content-main2 {
     display: grid;
-    grid-template-rows: 95px 1fr;
+    grid-template-rows: 95px 1fr 10px;
     grid-gap: 0px;
     margin-bottom: 200px;
     background-color: #f4f6f9;
@@ -370,25 +395,25 @@ a.btn-primary:hover{
 }
 
 .tombol-edit {
-    background-color: #58BC82!important;
+    background-color: #58BC82 !important;
     margin-left: 2.5px;
     margin-right: 2.5px;
 }
 
 .tombol-hapus {
-    background-color: #DA2C38!important;
+    background-color: #DA2C38 !important;
 }
 
 .Baik {
-    background-color: #58BC82!important;
+    background-color: #58BC82 !important;
 }
 
 .Ringan {
-    background-color: #FF9F1C!important;
+    background-color: #FF9F1C !important;
 }
 
 .Berat {
-    background-color: #DA2C38!important;
+    background-color: #DA2C38 !important;
 }
 
 .right-content-main-barang-table-container {
@@ -396,7 +421,7 @@ a.btn-primary:hover{
     margin-top: 20px;
 }
 
-.right-content-main-barang-table { 
+.right-content-main-barang-table {
     margin: 25px 0px 25px 0px;
 }
 
@@ -460,9 +485,7 @@ a.btn-primary:hover{
     width: 100%;
 }
 
-.left-form-title {
-    font-family: ;
-}
+
 
 .left-form-subtitle {
     position: relative;
@@ -518,4 +541,43 @@ a.btn-primary:hover{
     bottom: 30px;
     color: white;
     font-size: 15px;
+}
+
+.topnav {
+    display: none;
+    position: fixed;
+    width: 100%;
+    z-index: 99;
+}
+
+.navbar {
+    background-color: white!important;
+    padding-left: 30px;
+    padding-right: 30px;
+
+}
+
+.logo-mini {
+    height: 50px;
+}
+
+
+@media only screen and (max-width: 768px) {
+    .sidenav {
+        position: fixed;
+        display: none;
+    }
+
+    .topnav {
+        display: block;
+    }
+
+    .wrapper {
+        display: grid;
+        grid-template-columns: 0px 1fr;
+    }
+
+    .right-content-header-toggle-icon {
+        display: none;
+    }
 }
