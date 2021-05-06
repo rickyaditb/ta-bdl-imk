@@ -36,7 +36,11 @@
                 </a>
             </li>
             <li>
-                <a class="btn btn-primary sidenav-button-no" href="index.php">
+                <a class="btn btn-primary <?php if ($namaHalaman === "riwayat") {
+                                                echo "sidenav-button";
+                                            } else {
+                                                echo "sidenav-button-no";
+                                            } ?>" href="riwayat.php">
                     <i class="material-icons sidenav-icon">history</i>
                     <p class="sidenav-text">Riwayat</p>
                 </a>
@@ -51,6 +55,7 @@
     </div>
 </div>
 
+<!-- Untuk Mobile -->
 <div class="topnav">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">

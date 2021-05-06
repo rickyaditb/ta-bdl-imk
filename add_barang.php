@@ -1,5 +1,5 @@
 <?php
-// Create database connection using config file
+ob_start(); // buffer flush
 include_once("koneksi.php");
 
 $result = mysqli_query($mysqli, "SELECT * FROM ruangan");
