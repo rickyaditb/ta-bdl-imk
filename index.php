@@ -1,4 +1,7 @@
 <?php
+
+include_once("cek_sesi.php");
+
 // Create database connection using config file
 include_once("koneksi.php");
 $namaHalaman = "beranda";
@@ -8,11 +11,17 @@ $query_barang_baik = mysqli_query($mysqli, "SELECT *  FROM barang WHERE kondisi_
 $query_barang_ringan = mysqli_query($mysqli, "SELECT *  FROM barang WHERE kondisi_barang LIKE '%Rusak Ringan%'");
 $query_barang_berat = mysqli_query($mysqli, "SELECT *  FROM barang WHERE kondisi_barang LIKE '%Rusak Berat%'");
 
-
 $jumlah_barang_total = mysqli_num_rows($query_barang_total);
 $jumlah_barang_baik = mysqli_num_rows($query_barang_baik);
 $jumlah_barang_ringan = mysqli_num_rows($query_barang_ringan);
 $jumlah_barang_berat = mysqli_num_rows($query_barang_berat);
+
+$query_total_ruangan = mysqli_query($mysqli, "SELECT *  FROM ruangan");
+$jumlah_total_ruangan = mysqli_num_rows($query_total_ruangan);
+
+$query_total_aset = mysqli_query($mysqli, "SELECT SUM(harga_barang) FROM barang");
+$simpan_hasil_ke_array = mysqli_fetch_row($query_total_aset);
+$ambil_baris_pertama = $simpan_hasil_ke_array[0];
 
 $tahun_0 = date("Y");
 $tahun_1 = date("Y") - 1;
@@ -151,9 +160,30 @@ $jumlah_tahun_5_x = mysqli_num_rows($query_tahun_5_x);
                             </div>
                         </div>
                     </div>
-
-
                 </div>
+
+                <!--Second Row Stat-->
+                <div class="right-content-main-graph row">
+                    <div class="right-content-second-stat-container col-lg">
+                        <div class="right-content-second-stat flex shadow">
+                            <i class="material-icons sidenav-icon right-content-second-stat-icon Baik">attach_money</i>
+                            <div class="right-content-second-stat-text">
+                                <p class="right-content-second-stat-text-title">Total Aset</p>
+                                <p>Rp <?php echo number_format($ambil_baris_pertama, 0, '', '.'); ?></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="right-content-second-stat-container col-lg">
+                        <div class="right-content-second-stat flex shadow">
+                            <i class="material-icons sidenav-icon right-content-second-stat-icon">school</i>
+                            <div class="right-content-second-stat-text">
+                                <p class="right-content-second-stat-text-title">Total Ruangan</p>
+                                <p><?php echo $jumlah_total_ruangan; ?></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <!--MAIN GRAPH-->
 
                 <div class="right-content-main-graph row">
@@ -164,15 +194,6 @@ $jumlah_tahun_5_x = mysqli_num_rows($query_tahun_5_x);
                         <canvas id="chartdua" class="shadow chartstyle"></canvas>
                     </div>
                 </div>
-
-
-                <div class="right-content-main-history">
-
-                </div>
-            </div>
-            <!--MAIN FOOTER-->
-            <div class="right-content-footer">
-                Footer
             </div>
         </div>
     </div>

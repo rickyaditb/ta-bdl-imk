@@ -1,4 +1,5 @@
 <?php
+include_once("cek_sesi.php");
 ob_start(); // buffer flush
 include_once("koneksi.php");
 
@@ -47,7 +48,7 @@ $namaHalaman = "barang";
 		</div>
 		<div class="right-content">
 			<!--MAIN HEADER-->
-			<?php include_once("partial/header.php");?>
+			<?php include_once("partial/header.php"); ?>
 
 			<!--MAIN CONTENT-->
 			<div class="right-content-main2">
@@ -72,11 +73,14 @@ $namaHalaman = "barang";
 
 						include_once("koneksi.php");
 
-						// kirim query ke database
-						$result = mysqli_query($mysqli, "INSERT INTO barang(kode_barang,nama_barang,harga_barang,kondisi_barang,kode_ruangan,tanggal_masuk) VALUES('$kode','$nama','$harga','$kondisi','$ruangan','$tanggal')");
+						$cek_duplikat = mysqli_query($mysqli, "SELECT * FROM barang WHERE kode_barang='$kode'");
+						if (mysqli_num_rows($cek_duplikat) >= 1) {
+							echo "<div class='alert alert-danger'>Kode barang sudah terdaftar, silahkan gunakan kode lain</div>";
+						} else {
+							$result = mysqli_query($mysqli, "INSERT INTO barang(kode_barang,nama_barang,harga_barang,kondisi_barang,kode_ruangan,tanggal_masuk) VALUES('$kode','$nama','$harga','$kondisi','$ruangan','$tanggal')");
+							echo "<div class='alert alert-success'>Barang berhasil ditambahkan, <a role='alert' href='barang.php'>Klik Disini</a> untuk kembali ke halaman Daftar Barang</div>";
+						}
 
-						// tampilkan pesan jika data selesai ditambahkan
-						echo "<div class='alert alert-success'>Barang berhasil ditambahkan, <a role='alert' href='barang.php'>Klik Disini</a> untuk kembali ke halaman Daftar Barang</div>";
 					}
 					?>
 					<form action="add_barang.php" method="post" name="form1">
@@ -131,10 +135,6 @@ $namaHalaman = "barang";
 
 
 				</div>
-			</div>
-			<!--MAIN FOOTER-->
-			<div class="right-content-footer">
-				Footer
 			</div>
 		</div>
 	</div>

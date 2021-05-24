@@ -1,4 +1,5 @@
 <?php
+include_once("cek_sesi.php");
 // include database connection file
 include_once("koneksi.php");
  

@@ -1,4 +1,5 @@
 <?php
+include_once("cek_sesi.php");
 ob_start(); // buffer flush
 // Create database connection using config file
 include_once("koneksi.php");
@@ -94,10 +95,6 @@ $namaHalaman = "ruangan";
                         <button type="submit" class="btn btn-primary float-end left-form-button" name="update" value="Update"><b>Simpan</b></button>
                     </form>
                 </div>
-            </div>
-            <!--MAIN FOOTER-->
-            <div class="right-content-footer">
-                Footer
             </div>
         </div>
     </div>

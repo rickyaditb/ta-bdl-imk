@@ -22,7 +22,9 @@ input[type=number] {
 }
 
 
-
+html, body {
+    min-height: 100vh;
+}
 
 
 
@@ -46,7 +48,11 @@ input[type=number] {
 
 }
 
-
+.separator {
+    background-color: black;
+    height: 10px;
+    width: 10px;
+}
 
 .logo {
     margin-top: 10px;
@@ -146,7 +152,7 @@ a.btn-primary:hover {
 
 .right-content {
     display: grid;
-    grid-template-rows: 100px 1fr 50px;
+    grid-template-rows: 100px 1fr;
 
 }
 
@@ -203,7 +209,6 @@ a.btn-primary:hover {
 /* Main property*/
 
 .right-content-main {
-    margin-bottom: 200px;
     background-color: #f4f6f9;
     padding-left: 30px;
     padding-right: 30px;
@@ -325,6 +330,48 @@ a.btn-primary:hover {
 }
 
 
+
+.right-content-second-stat-container {
+    margin-top: 25px;
+}
+
+.right-content-second-stat {
+    background-color: white;
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: bolder;
+    display: flex;
+}
+
+.right-content-second-stat-icon {
+    background-color: #6777ef;
+    width: 10%;
+    height: 40px;
+    border-radius: 5px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 10px;
+    font-weight: bolder;
+}
+
+
+.right-content-second-stat-text-title {
+    margin-top: -3px;
+    font-weight: normal;
+    color: #67676b;
+    font-size: small;
+}
+
+.right-content-second-stat-text {
+    line-height: 1%;
+    position: relative;
+    top: 12px;
+    left: 10px;
+}
+
+
 .right-content-main-graph {
     position: relative;
     top: -30px;
@@ -359,10 +406,6 @@ a.btn-primary:hover {
 /* Kode Dibawah untuk page Barang */
 
 .right-content-main2 {
-    display: grid;
-    grid-template-rows: 95px 1fr 10px;
-    grid-gap: 0px;
-    margin-bottom: 200px;
     background-color: #f4f6f9;
     padding-left: 30px;
     padding-right: 30px;
@@ -370,11 +413,16 @@ a.btn-primary:hover {
 
 .right-content-main-barang-container {
     background-color: white;
-    min-height: 80px;
     margin-left: 10px;
     margin-right: 10px;
     padding: 25px;
     margin-top: -15px;
+    overflow: hidden;
+    margin-bottom: 30px;
+}
+
+th {
+    border-bottom: 1px solid white !important;
 }
 
 .style-kondisi {
@@ -396,23 +444,24 @@ a.btn-primary:hover {
 
 .tombol-edit {
     background-color: #58BC82 !important;
-    margin-left: 2.5px;
-    margin-right: 2.5px;
 }
 
 .tombol-hapus {
     background-color: #DA2C38 !important;
 }
 
-.Baik, .Tambah {
+.Baik,
+.Tambah {
     background-color: #58BC82 !important;
 }
 
-.Ringan, .Edit {
+.Ringan,
+.Edit {
     background-color: #FF9F1C !important;
 }
 
-.Berat, .Hapus {
+.Berat,
+.Hapus {
     background-color: #DA2C38 !important;
 }
 
@@ -502,6 +551,12 @@ a.btn-primary:hover {
     top: 100px;
 }
 
+.left-form-alert {
+    position: relative;
+    top: 80px;
+    margin-bottom: -10px;
+}
+
 .left-form-button {
     background-color: #6777ef;
     border-color: #fcfcfc;
@@ -509,6 +564,26 @@ a.btn-primary:hover {
     height: 45px;
     font-size: 13px;
     border-radius: 5px;
+}
+
+.left-form-button-login {
+    background-color: #6777ef;
+    border-color: #fcfcfc;
+    width: 85px;
+    height: 45px;
+    font-size: 13px;
+    border-radius: 5px;
+}
+
+.left-form-button-register {
+    background-color: white;
+    border-color: #6777ef;
+    width: 85px;
+    height: 45px;
+    font-size: 13px;
+    border-radius: 5px;
+    margin-right: 10px;
+    color: #6777ef;
 }
 
 .left-form-credit {
@@ -519,16 +594,16 @@ a.btn-primary:hover {
 
 
 .right-image {
-    background-image: url("../img/bg-gif.gif");
+    background-image: url("../img/login-bg.jpg");
     /* background-image: url("../img/login-bg.jpg"); */
     background-repeat: no-repeat;
     background-size: cover;
-    padding-left: 100px;
+    padding-left: 60px;
 }
 
 .right-image-title {
     position: absolute;
-    bottom: 140px;
+    bottom: 60px;
     color: white;
     font-size: 60px;
     font-weight: bold;
@@ -536,7 +611,7 @@ a.btn-primary:hover {
 
 .right-image-subtitle {
     position: absolute;
-    bottom: 120px;
+    bottom: 40px;
     color: white;
     font-size: 20px;
 }
@@ -556,7 +631,7 @@ a.btn-primary:hover {
 }
 
 .navbar {
-    background-color: white!important;
+    background-color: white !important;
     padding-left: 30px;
     padding-right: 30px;
 
@@ -590,21 +665,20 @@ a.btn-primary:hover {
 
 tr.hide-table-padding td {
     padding: 0;
-  }
-  
-  .expand-button {
-      position: relative;
-  }
-  
-  .accordion-toggle .expand-button:after
-  {
+}
+
+.expand-button {
+    position: relative;
+}
+
+.accordion-toggle .expand-button:after {
     position: absolute;
-    left:.75rem;
+    left: .75rem;
     top: 50%;
     transform: translate(0, -50%);
     content: '-';
-  }
-  .accordion-toggle.collapsed .expand-button:after
-  {
+}
+
+.accordion-toggle.collapsed .expand-button:after {
     content: '+';
-  }
+}

@@ -1,8 +1,8 @@
 <?php
+include_once("cek_sesi.php");
 ob_start(); // buffer flush
 include_once("koneksi.php");
 
-$resultx = mysqli_query($mysqli, "SELECT * FROM ruangan");
 $namaHalaman = "barang";
 ?>
 
@@ -62,8 +62,6 @@ $namaHalaman = "barang";
 						$ruangan = $_POST['kode_ruangan'];
 						$tanggal = $_POST['tanggal_masuk'];
 
-
-
 						include_once("koneksi.php");
 
 						// kirim query ke database
@@ -74,6 +72,7 @@ $namaHalaman = "barang";
 					}
 					?>
 					<?php
+					$resultx = mysqli_query($mysqli, "SELECT * FROM ruangan");
 					// Display selected user data based on id
 					// Getting id from url
 					$id = $_GET['id'];
@@ -150,10 +149,6 @@ $namaHalaman = "barang";
 
 
 				</div>
-			</div>
-			<!--MAIN FOOTER-->
-			<div class="right-content-footer">
-				Footer
 			</div>
 		</div>
 	</div>

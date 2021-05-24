@@ -1,4 +1,5 @@
 <?php
+include_once("cek_sesi.php");
 // Create database connection using config file
 include_once("koneksi.php");
 
@@ -28,9 +29,10 @@ $namaHalaman = "barang";
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <!-- jquery dan dataTables-->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="css/datatables.min.css">
-    <script type="text/javascript" src="js/datatables.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4-4.1.1/jq-3.3.1/jszip-2.5.0/dt-1.10.24/b-1.7.0/b-colvis-1.7.0/b-html5-1.7.0/b-print-1.7.0/r-2.2.7/sb-1.0.1/datatables.min.css" />
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/v/bs4-4.1.1/jq-3.3.1/jszip-2.5.0/dt-1.10.24/b-1.7.0/b-colvis-1.7.0/b-html5-1.7.0/b-print-1.7.0/r-2.2.7/sb-1.0.1/datatables.min.js"></script>
 
     <!-- Style -->
     <link rel="stylesheet" href="css/style.css">
@@ -41,20 +43,15 @@ $namaHalaman = "barang";
 
     <?php include_once("partial/sidenav.php"); ?>
 
-
-
-
-
-
     <div id="wrapper" class="wrapper">
         <div class="left-dummy">
 
         </div>
         <div class="right-content">
             <!--MAIN HEADER-->
-            <?php include_once("partial/header.php");?>
+            <?php include_once("partial/header.php"); ?>
 
-            
+
             <!--MAIN CONTENT-->
             <div class="right-content-main2">
                 <!--HEADER INDICATOR-->
@@ -72,7 +69,7 @@ $namaHalaman = "barang";
                         <table id="tableku" class="table table-bordered right-content-main-barang-table">
                             <thead class="table-light">
                                 <tr>
-                                    <th>#</th>
+                                    <th class="tesx123">#</th>
                                     <th>Kode</th>
                                     <th>Nama</th>
                                     <th>Harga</th>
@@ -110,10 +107,6 @@ $namaHalaman = "barang";
                     </div>
                 </div>
             </div>
-            <!--MAIN FOOTER-->
-            <div class="right-content-footer">
-                Footer
-            </div>
         </div>
     </div>
 
@@ -121,11 +114,16 @@ $namaHalaman = "barang";
         /*Script untuk Table*/
         $(document).ready(function() {
             $('#tableku').DataTable({
-                "lengthMenu": [ 10, 25, 50, 75, 100 ],
+                /*
+                "dom": 'Bfrtip',
+                "buttons": [
+                    'copy', 'csv', 'excel', 'pdf', 'print'
+                ],*/
+                "lengthMenu": [10, 25, 50, 75, 100],
                 "language": {
-                    "url":"//cdn.datatables.net/plug-ins/1.10.24/i18n/Indonesian.json"
+                    "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/Indonesian.json"
                 }
-                
+
             });
         });
     </script>

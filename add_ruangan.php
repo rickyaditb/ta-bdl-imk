@@ -1,4 +1,5 @@
 <?php
+include_once("cek_sesi.php");
 // Create database connection using config file
 include_once("koneksi.php");
 $namaHalaman = "ruangan";
@@ -58,11 +59,14 @@ $namaHalaman = "ruangan";
 
                         include_once("koneksi.php");
 
-                        // kirim query ke database
-                        $result = mysqli_query($mysqli, "INSERT INTO ruangan(kode_ruangan,nama_ruangan) VALUES('$kode','$nama')");
+                        $cek_duplikat = mysqli_query($mysqli, "SELECT * FROM ruangan WHERE kode_ruangan='$kode'");
+						if (mysqli_num_rows($cek_duplikat) >= 1) {
+							echo "<div class='alert alert-danger'>Kode Ruangan sudah terdaftar, silahkan gunakan kode lain</div>";
+						} else {
+							$result = mysqli_query($mysqli, "INSERT INTO ruangan(kode_ruangan,nama_ruangan) VALUES('$kode','$nama')");
+							echo "<div class='alert alert-success'>Ruangan berhasil ditambahkan, <a role='alert' href='ruangan.php'>Klik Disini</a> untuk kembali ke halaman Daftar Ruangan</div>";
+						}
 
-                        // tampilkan pesan jika data selesai ditambahkan
-                        echo "<div class='alert alert-success'>Ruangan berhasil ditambahkan, <a role='alert' href='ruangan.php'>Klik Disini</a> untuk kembali ke halaman Daftar Ruangan</div>";
                     }
                     ?>
                     <form action="add_ruangan.php" method="post" name="form1">
@@ -79,10 +83,6 @@ $namaHalaman = "ruangan";
                         <button type="submit" class="btn btn-primary float-end left-form-button" name="Submit" value="Add"><b>Tambah</b></button>
                     </form>
                 </div>
-            </div>
-            <!--MAIN FOOTER-->
-            <div class="right-content-footer">
-                Footer
             </div>
         </div>
     </div>

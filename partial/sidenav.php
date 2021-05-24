@@ -46,7 +46,7 @@
                 </a>
             </li>
             <li>
-                <a class="btn btn-danger sidenav-button-no" href="index.php">
+                <a class="btn btn-danger sidenav-button-no" href="logout.php">
                     <i class="material-icons sidenav-icon">logout</i>
                     <p class="sidenav-text">Logout</p>
                 </a>
@@ -75,10 +75,10 @@
                         <a class="nav-link" href="ruangan.php">Ruangan</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Riwayat</a>
+                        <a class="nav-link" href="riwayat.php">Riwayat</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Logout</a>
+                        <a class="nav-link" href="logout.php">Logout</a>
                     </li>
                 </ul>
             </div>

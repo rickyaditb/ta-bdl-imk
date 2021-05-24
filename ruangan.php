@@ -1,4 +1,5 @@
 <?php
+include_once("cek_sesi.php");
 // Create database connection using config file
 include_once("koneksi.php");
 
@@ -28,9 +29,10 @@ $namaHalaman = "ruangan";
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <!-- jquery dan dataTables-->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="css/datatables.min.css">
-    <script type="text/javascript" src="js/datatables.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4-4.1.1/jq-3.3.1/jszip-2.5.0/dt-1.10.24/b-1.7.0/b-colvis-1.7.0/b-html5-1.7.0/b-print-1.7.0/r-2.2.7/sb-1.0.1/datatables.min.css" />
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/v/bs4-4.1.1/jq-3.3.1/jszip-2.5.0/dt-1.10.24/b-1.7.0/b-colvis-1.7.0/b-html5-1.7.0/b-print-1.7.0/r-2.2.7/sb-1.0.1/datatables.min.js"></script>
 
     <!-- Style -->
     <link rel="stylesheet" href="css/style.css">
@@ -104,10 +106,6 @@ $namaHalaman = "ruangan";
                         </table>
                     </div>
                 </div>
-            </div>
-            <!--MAIN FOOTER-->
-            <div class="right-content-footer">
-                Footer
             </div>
         </div>
     </div>
