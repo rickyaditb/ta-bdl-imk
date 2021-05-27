@@ -55,7 +55,7 @@ $jumlah_tahun_5_x = mysqli_num_rows($query_tahun_5_x);
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title></title>
+    <title>Beranda</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js" integrity="sha512-hZf9Qhp3rlDJBvAKvmiG+goaaKRZA6LKUO35oK6EsM0/kjPK32Yw7URqrq3Q+Nvbbt8Usss+IekL7CRn83dYmw==" crossorigin="anonymous"></script>
@@ -229,7 +229,7 @@ $jumlah_tahun_5_x = mysqli_num_rows($query_tahun_5_x);
                     }
                 },
                 scales: {
-                    y: [{
+                    yAxes: [{
                         ticks: {
                             beginAtZero: true
                         }
